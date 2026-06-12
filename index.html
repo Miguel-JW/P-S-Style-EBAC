@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pet&Style — Moda e estilo para o seu pet</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50:  '#fdf4ff',
+              100: '#fae8ff',
+              200: '#f3d0fe',
+              400: '#d946ef',
+              500: '#c026d3',
+              600: '#a21caf',
+              700: '#86198f',
+            },
+            amber: { 400: '#fbbf24' }
+          },
+          fontFamily: {
+            display: ['Georgia', 'serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    html { scroll-behavior: smooth; }
+    .hero-bg {
+      background: linear-gradient(135deg, #fdf4ff 0%, #fae8ff 50%, #ede9fe 100%);
+    }
+    .card-hover {
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+    .card-hover:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 40px rgba(192, 38, 211, 0.15);
+    }
+  </style>
+</head>
+<body class="bg-white text-gray-800 font-sans">
+
+  <!-- ── HEADER ── -->
+  <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-brand-100 shadow-sm">
+    <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+
+      <!-- Logo -->
+      <a href="#home" class="flex items-center gap-2">
+        <span class="bg-brand-500 text-white font-display font-bold text-lg px-3 py-1 rounded-xl">P&S</span>
+        <span class="font-display text-xl font-bold text-brand-600 hidden sm:inline">Pet<span class="text-brand-400">&</span>Style</span>
+      </a>
+
+      <!-- Nav desktop -->
+      <nav class="hidden md:flex items-center gap-8">
+        <a href="#home"        class="text-sm font-medium text-gray-500 hover:text-brand-500 transition-colors">Home</a>
+        <a href="#produtos"    class="text-sm font-medium text-gray-500 hover:text-brand-500 transition-colors">Produtos</a>
+        <a href="#depoimentos" class="text-sm font-medium text-gray-500 hover:text-brand-500 transition-colors">Depoimentos</a>
+        <a href="#contato"     class="text-sm font-medium bg-brand-500 text-white px-4 py-2 rounded-lg hover:bg-brand-600 transition-colors">Contato</a>
+      </nav>
+
+      <!-- Nav mobile toggle -->
+      <button id="menuBtn" class="md:hidden p-2 rounded-lg hover:bg-brand-50 transition-colors" aria-label="Menu">
+        <svg class="w-6 h-6 text-brand-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Nav mobile -->
+    <div id="mobileMenu" class="hidden md:hidden border-t border-brand-100 bg-white px-4 pb-4">
+      <nav class="flex flex-col gap-1 pt-3">
+        <a href="#home"        class="py-2 px-3 rounded-lg text-gray-600 hover:bg-brand-50 hover:text-brand-600 transition-colors">Home</a>
+        <a href="#produtos"    class="py-2 px-3 rounded-lg text-gray-600 hover:bg-brand-50 hover:text-brand-600 transition-colors">Produtos</a>
+        <a href="#depoimentos" class="py-2 px-3 rounded-lg text-gray-600 hover:bg-brand-50 hover:text-brand-600 transition-colors">Depoimentos</a>
+        <a href="#contato"     class="py-2 px-3 rounded-lg bg-brand-500 text-white text-center font-semibold mt-1 hover:bg-brand-600 transition-colors">Contato</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ── HERO ── -->
+    <section id="home" class="hero-bg min-h-screen flex items-center">
+      <div class="max-w-6xl mx-auto px-4 py-20 flex flex-col md:flex-row items-center gap-12">
+
+        <!-- Texto -->
+        <div class="flex-1 text-center md:text-left">
+          <span class="inline-block bg-brand-100 text-brand-600 text-xs font-semibold uppercase tracking-widest px-3 py-1 rounded-full mb-4">
+            Nova coleção 2025
+          </span>
+          <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-6">
+            Seu pet merece <span class="text-brand-500">estilo</span> e conforto
+          </h1>
+          <p class="text-gray-500 text-lg max-w-md mx-auto md:mx-0 mb-8">
+            Roupas, acessórios e caminhas premium para cachorros e gatos que amam ser os protagonistas.
+          </p>
+          <div class="flex flex-wrap gap-3 justify-center md:justify-start">
+            <a href="#produtos" class="bg-brand-500 text-white font-semibold px-6 py-3 rounded-xl hover:bg-brand-600 transition-colors shadow-lg shadow-brand-200">
+              Ver produtos
+            </a>
+            <a href="#contato" class="border-2 border-brand-200 text-brand-600 font-semibold px-6 py-3 rounded-xl hover:border-brand-400 transition-colors">
+              Fale conosco
+            </a>
+          </div>
+          <!-- Badges -->
+          <div class="flex flex-wrap gap-6 justify-center md:justify-start mt-10 text-sm text-gray-500">
+            <div class="flex items-center gap-2">
+              <span class="text-2xl">🚚</span>
+              <span>Frete grátis acima de R$ 150</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="text-2xl">💜</span>
+              <span>+2.000 pets felizes</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Imagem hero -->
+        <div class="flex-1 flex justify-center">
+          <div class="relative w-72 h-72 sm:w-96 sm:h-96">
+            <div class="absolute inset-0 rounded-full bg-brand-200 opacity-40 animate-pulse"></div>
+            <img
+              src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=600&q=80"
+              srcset="
+                https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=400&q=75 400w,
+                https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=600&q=80 600w
+              "
+              sizes="(max-width: 640px) 288px, 384px"
+              alt="Cachorro feliz com acessórios estilosos"
+              class="relative w-full h-full object-cover rounded-3xl shadow-2xl"
+            />
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ── PRODUTOS ── -->
+    <section id="produtos" class="py-20 bg-white">
+      <div class="max-w-6xl mx-auto px-4">
+
+        <!-- Header seção -->
+        <div class="text-center mb-12">
+          <span class="text-brand-500 text-xs font-semibold uppercase tracking-widest">Catálogo</span>
+          <h2 class="font-display text-3xl sm:text-4xl font-bold text-gray-900 mt-2 mb-3">Nossos produtos</h2>
+          <p class="text-gray-500 max-w-md mx-auto">Peças selecionadas com carinho e muita qualidade para o seu melhor amigo.</p>
+        </div>
+
+        <!-- Grid de produtos -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+
+          <!-- Card 1 -->
+          <div class="card-hover bg-white border border-gray-100 rounded-2xl overflow-hidden shadow-sm">
+            <div class="relative overflow-hidden h-52">
+              <img
+                src="https://images.unsplash.com/photo-1601758124510-52d02ddb7cbd?w=400&q=80"
+                srcset="
+                  https://images.unsplash.com/photo-1601758124510-52d02ddb7cbd?w=300&q=75 300w,
+                  https://images.unsplash.com/photo-1601758124510-52d02ddb7cbd?w=400&q=80 400w
+                "
+                sizes="300px"
+                alt="Caminha Luxo Rosa"
+                class="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+              />
+              <span class="absolute top-3 left-3 bg-brand-500 text-white text-xs font-bold px-2 py-1 rounded-lg">Novo</span>
+            </div>
+            <div class="p-4">
+              <span class="text-xs text-brand-400 font-semibold uppercase tracking-wide">Caminhas</span>
+              <h3 class="font-semibold text-gray-900 mt-1 mb-1">Caminha Luxo Rosa</h3>
+              <p class="text-xs text-gray-400 mb-3">Pelúcia premium, lavável, ideal para raças pequenas e médias.</p>
+              <div class="flex items-center justify-between">
+                <span class="text-brand-600 font-bold text-lg">R$ 189,90</span>
+                <button class="bg-brand-50 text-brand-600 text-xs font-semibold px-3 py-2 rounded-lg hover:bg-brand-500 hover:text-white transition-colors">
+                  Comprar
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="card-hover bg-white border border-gray-100 rounded-2xl overflow-hidden shadow-sm">
+            <div class="relative overflow-hidden h-52">
+              <img
+                src="https://images.unsplash.com/photo-1576201836106-db1758fd1c97?w=400&q=80"
+                srcset="
+                  https://images.unsplash.com/photo-1576201836106-db1758fd1c97?w=300&q=75 300w,
+                  https://images.unsplash.com/photo-1576201836106-db1758fd1c97?w=400&q=80 400w
+                "
+                sizes="300px"
+                alt="Kit Brinquedos Coloridos"
+                class="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+              />
+              <span class="absolute top-3 left-3 bg-amber-400 text-white text-xs font-bold px-2 py-1 rounded-lg">-20%</span>
+            </div>
+            <div class="p-4">
+              <span class="text-xs text-brand-400 font-semibold uppercase tracking-wide">Brinquedos</span>
+              <h3 class="font-semibold text-gray-900 mt-1 mb-1">Kit Brinquedos Coloridos</h3>
+              <p class="text-xs text-gray-400 mb-3">6 peças em borracha atóxica para entreter seu pet por horas.</p>
+              <div class="flex items-center justify-between">
+                <div>
+                  <span class="text-gray-400 text-xs line-through">R$ 74,90</span>
+                  <span class="text-brand-600 font-bold text-lg ml-1">R$ 59,90</span>
+                </div>
+                <button class="bg-brand-50 text-brand-600 text-xs font-semibold px-3 py-2 rounded-lg hover:bg-brand-500 hover:text-white transition-colors">
+                  Comprar
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="card-hover bg-white border border-gray-100 rounded-2xl overflow-hidden shadow-sm">
+            <div class="relative overflow-hidden h-52">
+              <img
+                src="https://images.unsplash.com/photo-1548767797-d8c844163c4c?w=400&q=80"
+                srcset="
+                  https://images.unsplash.com/photo-1548767797-d8c844163c4c?w=300&q=75 300w,
+                  https://images.unsplash.com/photo-1548767797-d8c844163c4c?w=400&q=80 400w
+                "
+                sizes="300px"
+                alt="Coleira Estilo Floral"
+                class="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+              />
+            </div>
+            <div class="p-4">
+              <span class="text-xs text-brand-400 font-semibold uppercase tracking-wide">Acessórios</span>
+              <h3 class="font-semibold text-gray-900 mt-1 mb-1">Coleira Estilo Floral</h3>
+              <p class="text-xs text-gray-400 mb-3">Couro vegano com estampa floral exclusiva e fivela reforçada.</p>
+              <div class="flex items-center justify-between">
+                <span class="text-brand-600 font-bold text-lg">R$ 49,90</span>
+                <button class="bg-brand-50 text-brand-600 text-xs font-semibold px-3 py-2 rounded-lg hover:bg-brand-500 hover:text-white transition-colors">
+                  Comprar
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="card-hover bg-white border border-gray-100 rounded-2xl overflow-hidden shadow-sm">
+            <div class="relative overflow-hidden h-52">
+              <img
+                src="https://images.unsplash.com/photo-1537151608828-ea2b11777ee8?w=400&q=80"
+                srcset="
+                  https://images.unsplash.com/photo-1537151608828-ea2b11777ee8?w=300&q=75 300w,
+                  https://images.unsplash.com/photo-1537151608828-ea2b11777ee8?w=400&q=80 400w
+                "
+                sizes="300px"
+                alt="Roupa Inverno Tricô"
+                class="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+              />
+              <span class="absolute top-3 left-3 bg-brand-500 text-white text-xs font-bold px-2 py-1 rounded-lg">Top</span>
+            </div>
+            <div class="p-4">
+              <span class="text-xs text-brand-400 font-semibold uppercase tracking-wide">Roupas</span>
+              <h3 class="font-semibold text-gray-900 mt-1 mb-1">Roupa Inverno Tricô</h3>
+              <p class="text-xs text-gray-400 mb-3">Blusa de tricô macia, quente e estilosa para os dias frios.</p>
+              <div class="flex items-center justify-between">
+                <span class="text-brand-600 font-bold text-lg">R$ 89,90</span>
+                <button class="bg-brand-50 text-brand-600 text-xs font-semibold px-3 py-2 rounded-lg hover:bg-brand-500 hover:text-white transition-colors">
+                  Comprar
+                </button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ── DEPOIMENTOS ── -->
+    <section id="depoimentos" class="py-20 bg-brand-50">
+      <div class="max-w-6xl mx-auto px-4">
+
+        <div class="text-center mb-12">
+          <span class="text-brand-500 text-xs font-semibold uppercase tracking-widest">Depoimentos</span>
+          <h2 class="font-display text-3xl sm:text-4xl font-bold text-gray-900 mt-2 mb-3">O que nossos clientes dizem</h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+          <!-- Depoimento 1 -->
+          <blockquote class="bg-white rounded-2xl p-6 shadow-sm border border-brand-100 flex flex-col gap-4">
+            <div class="flex gap-1 text-amber-400 text-sm">★★★★★</div>
+            <p class="text-gray-600 italic leading-relaxed">
+              "A caminha da Pet&Style é linda e minha Mel simplesmente não sai de lá! Material de altíssima qualidade e entrega super rápida. Recomendo demais!"
+            </p>
+            <footer class="flex items-center gap-3 mt-auto">
+              <div class="w-10 h-10 rounded-full bg-brand-200 flex items-center justify-center text-brand-700 font-bold text-sm flex-shrink-0">JF</div>
+              <div>
+                <strong class="block text-sm text-gray-900">Juliana Fernandes</strong>
+                <span class="text-xs text-gray-400">Tutora da Mel, Golden Retriever</span>
+              </div>
+            </footer>
+          </blockquote>
+
+          <!-- Depoimento 2 (destaque) -->
+          <blockquote class="bg-brand-500 rounded-2xl p-6 shadow-lg flex flex-col gap-4 md:scale-105">
+            <div class="flex gap-1 text-amber-400 text-sm">★★★★★</div>
+            <p class="text-white/90 italic leading-relaxed">
+              "Comprei o kit de brinquedos e a coleira floral para o Toby — ele adorou tudo! O site é lindo, os produtos chegaram embalados com muito cuidado. Voltarei com certeza."
+            </p>
+            <footer class="flex items-center gap-3 mt-auto">
+              <div class="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center text-white font-bold text-sm flex-shrink-0">RC</div>
+              <div>
+                <strong class="block text-sm text-white">Ricardo Costa</strong>
+                <span class="text-xs text-white/70">Tutor do Toby, Beagle</span>
+              </div>
+            </footer>
+          </blockquote>
+
+          <!-- Depoimento 3 -->
+          <blockquote class="bg-white rounded-2xl p-6 shadow-sm border border-brand-100 flex flex-col gap-4">
+            <div class="flex gap-1 text-amber-400 text-sm">★★★★★</div>
+            <p class="text-gray-600 italic leading-relaxed">
+              "Achei incrível a variedade de produtos! A roupa de inverno serviu perfeitamente na minha gatinha Luna. Atendimento atencioso e entrega dentro do prazo."
+            </p>
+            <footer class="flex items-center gap-3 mt-auto">
+              <div class="w-10 h-10 rounded-full bg-brand-200 flex items-center justify-center text-brand-700 font-bold text-sm flex-shrink-0">PM</div>
+              <div>
+                <strong class="block text-sm text-gray-900">Patrícia Moreira</strong>
+                <span class="text-xs text-gray-400">Tutora da Luna, Persa</span>
+              </div>
+            </footer>
+          </blockquote>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ── CONTATO ── -->
+    <section id="contato" class="py-20 bg-white">
+      <div class="max-w-5xl mx-auto px-4">
+
+        <div class="text-center mb-12">
+          <span class="text-brand-500 text-xs font-semibold uppercase tracking-widest">Fale conosco</span>
+          <h2 class="font-display text-3xl sm:text-4xl font-bold text-gray-900 mt-2 mb-3">Entre em contato</h2>
+          <p class="text-gray-500 max-w-md mx-auto">Tem dúvidas ou quer saber mais sobre nossos produtos? Adoramos conversar!</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
+
+          <!-- Informações -->
+          <div class="flex flex-col gap-6">
+            <div class="flex items-start gap-4">
+              <span class="text-2xl mt-1">📧</span>
+              <div>
+                <h3 class="font-semibold text-gray-800 mb-1">E-mail</h3>
+                <p class="text-gray-500 text-sm">contato@peteestyle.com.br</p>
+                <p class="text-gray-500 text-sm">suporte@peteestyle.com.br</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-4">
+              <span class="text-2xl mt-1">📞</span>
+              <div>
+                <h3 class="font-semibold text-gray-800 mb-1">Telefone</h3>
+                <p class="text-gray-500 text-sm">(11) 9 8888-7777</p>
+                <p class="text-gray-400 text-xs">Seg–Sex, das 9h às 18h</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-4">
+              <span class="text-2xl mt-1">📍</span>
+              <div>
+                <h3 class="font-semibold text-gray-800 mb-1">Endereço</h3>
+                <p class="text-gray-500 text-sm">Rua das Flores, 42 — São Paulo, SP</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-4">
+              <span class="text-2xl mt-1">💬</span>
+              <div>
+                <h3 class="font-semibold text-gray-800 mb-1">Redes sociais</h3>
+                <div class="flex gap-3 mt-1">
+                  <a href="#" class="text-xs bg-brand-50 text-brand-600 font-semibold px-3 py-1.5 rounded-lg hover:bg-brand-100 transition-colors">Instagram</a>
+                  <a href="#" class="text-xs bg-brand-50 text-brand-600 font-semibold px-3 py-1.5 rounded-lg hover:bg-brand-100 transition-colors">TikTok</a>
+                  <a href="#" class="text-xs bg-brand-50 text-brand-600 font-semibold px-3 py-1.5 rounded-lg hover:bg-brand-100 transition-colors">Facebook</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Formulário -->
+          <form id="formContato" class="bg-brand-50 border border-brand-100 rounded-2xl p-6 flex flex-col gap-4" novalidate>
+            <div class="flex flex-col gap-1">
+              <label for="nome" class="text-xs font-semibold text-gray-500 uppercase tracking-wide">Nome</label>
+              <input type="text" id="nome" name="nome" placeholder="Seu nome completo"
+                class="bg-white border border-brand-100 rounded-xl px-4 py-2.5 text-sm text-gray-800 focus:outline-none focus:border-brand-400 transition-colors"
+                required/>
+              <span class="text-xs text-red-500 hidden" id="erroNome">Informe seu nome.</span>
+            </div>
+            <div class="flex flex-col gap-1">
+              <label for="email" class="text-xs font-semibold text-gray-500 uppercase tracking-wide">E-mail</label>
+              <input type="email" id="email" name="email" placeholder="seu@email.com"
+                class="bg-white border border-brand-100 rounded-xl px-4 py-2.5 text-sm text-gray-800 focus:outline-none focus:border-brand-400 transition-colors"
+                required/>
+              <span class="text-xs text-red-500 hidden" id="erroEmail">Informe um e-mail válido.</span>
+            </div>
+            <div class="flex flex-col gap-1">
+              <label for="mensagem" class="text-xs font-semibold text-gray-500 uppercase tracking-wide">Mensagem</label>
+              <textarea id="mensagem" name="mensagem" rows="4" placeholder="Escreva sua mensagem..."
+                class="bg-white border border-brand-100 rounded-xl px-4 py-2.5 text-sm text-gray-800 focus:outline-none focus:border-brand-400 transition-colors resize-y"
+                required></textarea>
+              <span class="text-xs text-red-500 hidden" id="erroMensagem">Escreva sua mensagem.</span>
+            </div>
+            <button type="submit"
+              class="bg-brand-500 text-white font-semibold py-3 rounded-xl hover:bg-brand-600 transition-colors shadow-md shadow-brand-200 mt-1">
+              Enviar mensagem
+            </button>
+            <p id="formFeedback" class="text-sm font-medium text-center min-h-[1.2rem]"></p>
+          </form>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ── FOOTER ── -->
+  <footer class="bg-gray-900 text-gray-400 py-8">
+    <div class="max-w-6xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-2">
+        <span class="bg-brand-500 text-white font-bold text-sm px-2 py-0.5 rounded-lg">P&S</span>
+        <span class="text-gray-300 font-semibold">Pet<span class="text-brand-400">&</span>Style</span>
+      </div>
+      <p class="text-xs text-center">© 2025 Pet&Style. Todos os direitos reservados.</p>
+      <nav class="flex gap-4 text-xs">
+        <a href="#home"     class="hover:text-white transition-colors">Home</a>
+        <a href="#produtos" class="hover:text-white transition-colors">Produtos</a>
+        <a href="#contato"  class="hover:text-white transition-colors">Contato</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script>
+    // Menu mobile
+    const menuBtn    = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+    });
+
+    // Validação do formulário
+    const form     = document.getElementById('formContato');
+    const feedback = document.getElementById('formFeedback');
+
+    const campos = [
+      { id: 'nome',     erroId: 'erroNome',     check: v => v.trim() !== '' },
+      { id: 'email',    erroId: 'erroEmail',    check: v => v.includes('@') && v.trim() !== '' },
+      { id: 'mensagem', erroId: 'erroMensagem', check: v => v.trim() !== '' },
+    ];
+
+    campos.forEach(({ id, erroId, check }) => {
+      document.getElementById(id).addEventListener('input', function () {
+        const erro = document.getElementById(erroId);
+        const ok   = check(this.value);
+        erro.classList.toggle('hidden', ok);
+        this.classList.toggle('border-red-400', !ok);
+        this.classList.toggle('border-brand-100', ok);
+      });
+    });
+
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      const validos = campos.map(({ id, erroId, check }) => {
+        const el  = document.getElementById(id);
+        const ok  = check(el.value);
+        document.getElementById(erroId).classList.toggle('hidden', ok);
+        el.classList.toggle('border-red-400', !ok);
+        return ok;
+      });
+
+      if (validos.every(Boolean)) {
+        feedback.textContent = '✓ Mensagem enviada! Retornaremos em breve.';
+        feedback.className   = 'text-sm font-medium text-center text-green-600';
+        form.reset();
+        setTimeout(() => { feedback.textContent = ''; }, 4000);
+      } else {
+        feedback.textContent = 'Corrija os campos em vermelho.';
+        feedback.className   = 'text-sm font-medium text-center text-red-500';
+      }
+    });
+  </script>
+</body>
+</html>
